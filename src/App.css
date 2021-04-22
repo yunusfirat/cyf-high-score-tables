@@ -38,7 +38,8 @@ h1 {
 }
 
 .scoretable {
-  border: 10px solid #ADFF2F;
+  border: 16px solid #ADFF2F;
+  margin: 10px;
 }
 
 
