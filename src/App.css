@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  border: 5px solid #0000FF;
+  width: 50%;
+  align-items: center;
+  text-align: center;
+  margin-left: 25%;
+  margin-top: 10px;
 }
 
 .App-logo {
@@ -27,6 +33,15 @@
 .App-link {
   color: #61dafb;
 }
+h1 {
+  color: hsl(203, 92%, 76%);
+}
+
+.scoretable {
+  border: 10px solid #ADFF2F;
+}
+
+
 
 @keyframes App-logo-spin {
   from {
