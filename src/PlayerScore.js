@@ -1,8 +1,9 @@
 /* eslint-disable indent */
-import React from "react";
+import React, { useState } from "react";
 import allCountryScores from "./scores";
 
 const PlayerScore = () => {
+    const [clicked,setClicked] = useState(false);
   let sortedScores =  allCountryScores.sort((a, b) => {
         let fa = a.name.toLowerCase(),
             fb = b.name.toLowerCase();
@@ -14,12 +15,24 @@ const PlayerScore = () => {
         }
         return 0;
     });
+    const toggle = () => {
+        if(clicked){
+            setClicked(false);
+        }else{
+            setClicked(true);
+        }
+    };
 	return (
 		<div>
+            <button className="btn btn-primary" onClick ={toggle}>Toggle Scores!</button>
 			{sortedScores.map((score, i) => {
                 const { scores, name } =score;
                 let sortScore = scores.sort((a, b) => {
-                    return b.s - a.s;
+                    if(!clicked){
+                        return b.s - a.s;
+                    }else{
+                        return a.s - b.s;
+                    }
                 });
                 return(
                     <div key={i}>
@@ -27,7 +40,7 @@ const PlayerScore = () => {
                         <div>
                         <h1> {name} </h1>
                         <div>
-                      {  sortScore.map((score, index) => {
+                      {sortScore.map((score, index) => {
                             const { n, s } = score;
                             return (
                                 <div key={index} style={{ border: "2px solid black", display:"flex", justifyContent:"space-around", margin:"10px" }}>
