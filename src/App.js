@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import HighScoreTable from "./HighScoreTable";
-// import PlayerScore from "./PlayerScore";
+import WorldWideTable from "./WorldWideTable";
 function App() {
 	return (
 		<div className="App">
@@ -9,7 +9,7 @@ function App() {
 				<h1>High Scores Per Country</h1>
 			</div>
 			<HighScoreTable />
-			{/* <PlayerScore /> */}
+			<WorldWideTable />
 		</div>
 	);
 }
