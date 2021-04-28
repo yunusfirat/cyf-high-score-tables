@@ -41,7 +41,9 @@ h1 {
   border: 16px solid #ADFF2F;
   margin: 10px;
 }
-
+.worldwidetable {
+  padding: 30px;
+}
 
 
 @keyframes App-logo-spin {

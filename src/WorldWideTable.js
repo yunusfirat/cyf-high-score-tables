@@ -1,44 +1,37 @@
 /* eslint-disable indent */
 import React from "react";
-import Scores from "./scores";
+import allCountryScores from "./scores";
 
 const WorldWideTable = () => {
-
-
+    let array = [];
+    let sortedArray = [];
 
     return (
-        <div>
-            {Scores.map((score, index) => {
-                const { scores } = score;
+        <div className="worldwidetable">
+            { allCountryScores.map((score, index) => {
+                const { scores, name } = score;
+                console.log("blah blah", score);
                 return (
                     <div key={index}>
-                        {
-                              scores.map((element,index) => {
-                                const { n , s } = element;
-                                let array =[];
-                                let object = { n:n , s:s };
-                                array.push(object);
-                             let sortedArray =  array.sort((a,b) =>{
-                                    return b.s - a.s;
-                                });
-                                console.log(sortedArray);
-                                return (
-                                    <div key={index}>
-                                        {
-                                         sortedArray.forEach((element, index) => {
-                                             const { n, s }  = element;
-                                             return (
-                                                 <div key={index}>
-                                                     <h1>{n} {s}</h1>
-                                                 </div>
-                                             );
-                                         })
-                                        }
-
-                                    </div>
-                                );
-                            })
-                        }
+                        {scores.map((element, index) => {
+                            array.push(element);
+                             sortedArray = array.sort((a, b) => {
+                                return b.s - a.s;
+                            });
+                            console.log(array);
+                            return (
+                                <div key={index}>
+                                    {sortedArray.map((arr, index) => {
+                                        const { n, s } = arr;
+                                        return (
+                                            <div key={index}>
+                                                <h1>{name} {n} {s}</h1>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            );
+                        })}
                     </div>
                 );
             })}

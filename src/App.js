@@ -8,8 +8,12 @@ function App() {
 			<div>
 				<h1>High Scores Per Country</h1>
 			</div>
-			<HighScoreTable />
-			<WorldWideTable />
+			<div>
+				<HighScoreTable />
+			</div>
+			<div>
+				<WorldWideTable />
+			</div>
 		</div>
 	);
 }
