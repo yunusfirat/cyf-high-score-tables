@@ -4,7 +4,6 @@ import allCountryScores from "./scores";
 
 const WorldWideTable = () => {
     let array = [];
-    // let sortedArray;
     allCountryScores.map(({ name, scores }) => {
         return (
             scores.map(({ n, s }) => {
@@ -22,26 +21,27 @@ const WorldWideTable = () => {
     });
     return (
         <div className="worldwidetable">
-                 <table>
+                 <table className="table">
                      <thead>
-                            <tr>
-                                <th>Country Name</th>
-                                <th>Player Name</th>
-                                <th>Player Score</th>
-                            </tr>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Country Name</th>
+                            <th scope="col">Player Name</th>
+                            <th scope="col">Player Score</th>
+                        </tr>
                      </thead>
                      <tbody>
                 {sortedArray.map(({ countryName, playerScore, playerName }, index) => {
                     return (
                         <tr key={index}>
+                            <th scope="row">{index + 1}</th>
                             <td>{countryName}</td>
                             <td>{playerName}</td>
                             <td>{playerScore}</td>
                         </tr>
                     );
-                })
-            };
-            </tbody>;
+                })};
+            </tbody>
          </table>
         </div>
     );

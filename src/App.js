@@ -11,9 +11,7 @@ function App() {
 			<div>
 				<HighScoreTable />
 			</div>
-			<div>
-				<WorldWideTable />
-			</div>
+			<WorldWideTable />
 		</div>
 	);
 }
