@@ -4,37 +4,45 @@ import allCountryScores from "./scores";
 
 const WorldWideTable = () => {
     let array = [];
-    let sortedArray = [];
-
+    // let sortedArray;
+    allCountryScores.map(({ name, scores }) => {
+        return (
+            scores.map(({ n, s }) => {
+                array.push({
+                    countryName: name,
+                    playerScore: s,
+                    playerName: n,
+                });
+                return array;
+            })
+        );
+    });
+    let sortedArray = array.sort((a, b) => {
+        return b.playerScore - a.playerScore;
+    });
     return (
         <div className="worldwidetable">
-            { allCountryScores.map((score, index) => {
-                const { scores, name } = score;
-                console.log("blah blah", score);
-                return (
-                    <div key={index}>
-                        {scores.map((element, index) => {
-                            array.push(element);
-                             sortedArray = array.sort((a, b) => {
-                                return b.s - a.s;
-                            });
-                            console.log(array);
-                            return (
-                                <div key={index}>
-                                    {sortedArray.map((arr, index) => {
-                                        const { n, s } = arr;
-                                        return (
-                                            <div key={index}>
-                                                <h1>{name} {n} {s}</h1>
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-                            );
-                        })}
-                    </div>
-                );
-            })}
+                 <table>
+                     <thead>
+                            <tr>
+                                <th>Country Name</th>
+                                <th>Player Name</th>
+                                <th>Player Score</th>
+                            </tr>
+                     </thead>
+                     <tbody>
+                {sortedArray.map(({ countryName, playerScore, playerName }, index) => {
+                    return (
+                        <tr key={index}>
+                            <td>{countryName}</td>
+                            <td>{playerName}</td>
+                            <td>{playerScore}</td>
+                        </tr>
+                    );
+                })
+            };
+            </tbody>;
+         </table>
         </div>
     );
 };
