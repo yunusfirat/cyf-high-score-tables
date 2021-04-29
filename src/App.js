@@ -5,12 +5,8 @@ import WorldWideTable from "./WorldWideTable";
 function App() {
 	return (
 		<div className="App">
-			<div>
-				<h1>High Scores Per Country</h1>
-			</div>
-			<div>
-				<HighScoreTable />
-			</div>
+			<h1>High Scores Per Country</h1>
+			<HighScoreTable />
 			<WorldWideTable />
 		</div>
 	);

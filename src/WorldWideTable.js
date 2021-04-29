@@ -21,6 +21,7 @@ const WorldWideTable = () => {
     });
     return (
         <div className="worldwidetable">
+            <h1>Highest Score Of The Game</h1>
             <table className="table">
                 <thead>
                     <tr>
