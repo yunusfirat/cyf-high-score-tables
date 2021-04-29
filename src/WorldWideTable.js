@@ -10,9 +10,9 @@ const WorldWideTable = () => {
         return (
             scores.map(({ n, s }) => {
                 array.push({
-                    countryName: name,
-                    playerScore: s,
-                    playerName: n,
+                    countryName:name,
+                    playerScore:s,
+                    playerName:n,
                 });
                 return array;
             })
@@ -23,12 +23,12 @@ const WorldWideTable = () => {
     });
     return (
         <div className="worldwidetable">
-            <h1><GiMp5  style={{ color:"black" }} />  Highest Score Of The Game <GiMp5 style={{ color:"black" }} /> </h1>
+            <h1><GiMp5  style={{ color:"black" }} />Highest Score Of The Game <GiMp5 style={{ color:"black" }} /> </h1>
             <table className="table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col"><ImHome />   Country Name</th>
+                        <th scope="col"><ImHome/>Country Name</th>
                         <th scope="col">Player Name</th>
                         <th scope="col">Player Score</th>
                     </tr>
@@ -40,8 +40,8 @@ const WorldWideTable = () => {
                                 <th scope="row">{index + 1}</th>
                                 <td>{countryName}</td>
                                 <td>{playerName}</td>
-                                <td>{playerScore < 0 ? <HiArrowNarrowDown style={{ color:"red" }} /> : <HiArrowNarrowUp style={{ color:"green" }} /> }
-                                {playerScore}<GiMp5  style={{ color:"black" }} /> </td>
+                                <td>{playerScore < 0 ? <HiArrowNarrowDown style={{ color:"red" }} /> : <HiArrowNarrowUp style={{ color:"green" }}/> }
+                                {playerScore}<GiMp5  style={{ color:"black" }} /></td>
                             </tr>
                         );
                     })};
