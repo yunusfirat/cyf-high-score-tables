@@ -21,28 +21,28 @@ const WorldWideTable = () => {
     });
     return (
         <div className="worldwidetable">
-                 <table className="table">
-                     <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Country Name</th>
-                            <th scope="col">Player Name</th>
-                            <th scope="col">Player Score</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                {sortedArray.map(({ countryName, playerScore, playerName }, index) => {
-                    return (
-                        <tr key={index}>
-                            <th scope="row">{index + 1}</th>
-                            <td>{countryName}</td>
-                            <td>{playerName}</td>
-                            <td>{playerScore}</td>
-                        </tr>
-                    );
-                })};
-            </tbody>
-         </table>
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Country Name</th>
+                        <th scope="col">Player Name</th>
+                        <th scope="col">Player Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {sortedArray.map(({ countryName, playerScore, playerName }, index) => {
+                        return (
+                            <tr key={index}>
+                                <th scope="row">{index + 1}</th>
+                                <td>{countryName}</td>
+                                <td>{playerName}</td>
+                                <td>{playerScore}</td>
+                            </tr>
+                        );
+                    })};
+                </tbody>
+            </table>
         </div>
     );
 };
